@@ -36,13 +36,13 @@ The framework ensures that:
 - IntelliJ IDEA 
 
 ## Project Structure
-- base/    → BaseTest.java (Playwright setup and teardown)
-- pages/   → HomePage.java, ProductPage.java (Page Object Model)
-- model/   → Product.java, RelatedItemsTestData.java
-- data/    → CustomRelatedItemsData.java (Test data provider)
-- utils/   → TestManager.java (ExtentReports management)
-- tests/   → Test classes for each validation scenario
-- listeners/   → TestListener.java (ExtentReports listener)
+- src/test/java/base/    → BaseTest.java (Playwright setup and teardown)
+- src/test/java/pages/   → HomePage.java, ProductPage.java (Page Object Model)
+- src/test/java/model/   → Product.java, RelatedItemsTestData.java
+- src/test/java/data/    → CustomRelatedItemsData.java (Test data provider)
+- src/test/java/utils/   → TestManager.java (ExtentReports management)
+- src/test/java/tests/   → Test classes for each validation scenario
+- src/test/java/listeners/   → TestListener.java (ExtentReports listener)
 - report/      → Test execution HTML reports
 - pom.xml      → Maven build configuration
 - README.md / Documentation → Project documentation
