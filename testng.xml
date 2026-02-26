@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+    <test name="RelatedProductsTests">
+        <classes>
+            <class name="tests.VisibleRelatedProductsSectionTest"/>
+            <class name="tests.BestSellerProductsTest"/>
+            <class name="tests.DuplicateProductsTest"/>
+            <class name="tests.MaxRelatedProductsTest"/>
+            <class name="tests.OutOfStockProductsTest"/>
+            <class name="tests.RelatedProductNavigationTest"/>
+            <class name="tests.RelatedProductsApiFailureTest"/>
+            <class name="tests.RelatedProductsCategoryMatchTest"/>
+            <class name="tests.RelatedProductsDetailsTest"/>
+            <class name="tests.RelatedProductsPriceValidationTest"/>
+        </classes>
+    </test>
+</suite>
