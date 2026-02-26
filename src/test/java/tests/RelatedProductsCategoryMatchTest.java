@@ -23,8 +23,8 @@ public class RelatedProductsCategoryMatchTest extends BaseTest{
         ProductPage productPage = new ProductPage(page);
         productPage.waitForProduct();
 
-        //boolean isVisible = productPage.isRelatedProductsVisible();
-        //Assert.assertTrue(isVisible, "Related products section is visible");
+        boolean isVisible = productPage.isRelatedProductsVisible();
+        Assert.assertTrue(isVisible, "Related products section is visible");
 
         // Verify categories of related products
         boolean actualResult = productPage.verifyRelatedProductsSameCategory(data.getMainProduct().getCategory(), data.getRelatedCategories(), data.getMaxAllowed());

@@ -21,8 +21,8 @@ public class DuplicateProductsTest extends BaseTest {
         ProductPage productPage = new ProductPage(page);
         productPage.waitForProduct();
 
-        //boolean isVisible = productPage.isRelatedProductsVisible();
-        //Assert.assertTrue(isVisible, "Related products section is visible");
+        boolean isVisible = productPage.isRelatedProductsVisible();
+        Assert.assertTrue(isVisible, "Related products section is visible");
 
         boolean hasDuplicates = productPage.hasDuplicateProducts(data.getRelatedProducts());
 

@@ -2,6 +2,7 @@ package pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.WaitUntilState;
 
 public class HomePage {
 
@@ -14,7 +15,10 @@ public class HomePage {
 
     /** Open home page */
     public void openHomePage() {
-        page.navigate(homeUrl);
+        page.navigate(homeUrl, new Page.NavigateOptions()
+                .setTimeout(60000) // increase timeout
+                .setWaitUntil(WaitUntilState.DOMCONTENTLOADED)); // faster than "load"
+
         System.out.println("Home Page Title: " + page.title());
     }
 
@@ -29,7 +33,13 @@ public class HomePage {
 
     /** Open a product by URL */
     public void openProduct(String productUrl) {
-        page.navigate(productUrl);
-        System.out.println("Navigated to product: " + productUrl);
+        page.navigate(productUrl,
+                new Page.NavigateOptions()
+                        .setTimeout(60000)
+                        .setWaitUntil(WaitUntilState.DOMCONTENTLOADED)
+        );
+
+        // Optional stabilization
+        page.waitForSelector("body");
     }
 }
