@@ -1,6 +1,6 @@
 ## Project Overview
 
-- The Related Products Automation Framework is designed to validate related products listings in product page. It provides end-to-end testing of the related products section for any main product, including category, price, stock, and quality checks.
+- The Related Products Automation Framework is designed to validate related products section in product page. It provides end-to-end testing of the related products section for any main product, including category, price, stock, and quality checks.
 This framework is built with Java, Playwright, TestNG, and Maven.
 
 ## Goals
@@ -12,8 +12,8 @@ The framework ensures that:
 - Maximum allowed number of products displayed.
 - Same category as main product.
 - Prices within acceptable percentage range.
-- Only best sellers are displayed if required.
-- Only in-stock products are shown if required.
+- Only best sellers are displayed.
+- Only in-stock products are shown.
 - No duplicate products.
 - Proper handling of API failures with fallback messages.
 - Navigation to related product pages works as expected.
@@ -51,8 +51,8 @@ The framework ensures that:
 
 - Stored in CustomRelatedItemsData.java.
 Each dataset includes:
-- Main product (name, URL, category, price, stock).
-- Related products array (name, URL, price, image, stock, category).
+- Main product (name, URL, image, category, price, sales count, in-stock).
+- Related products array (name, URL, image, category, price, sales count, in-stock).
 - Expected results for each validation (category, price, stock, best sellers, API failure).
 
 
@@ -78,7 +78,7 @@ The framework includes the following test cases:
 ## Framework Workflow
 
 - Setup: Playwright launches browser and creates page context (BaseTest).
-- Navigation: Open eBay home page → search product → open product page (HomePage).
+- Navigation: Open eBay home page → search product → open product page.
 - Page Loading: Wait for product page to load fully (ProductPage.waitForProduct).
 - Validations: Each test performs specific validations using methods in ProductPage:
 Section visibility,
@@ -93,20 +93,29 @@ API fallback handling
 - Reporting: ExtentReports captures logs and pass/fail results.
 - Teardown: Browser and Playwright session closed (BaseTest.tearDown).
 
+## Prerequisites
+
+- Java 21 installed
+- Maven installed
+- IntelliJ IDEA 
+- Git installed
+
 ## Setup Instructions
 
-- Clone the repository 
-- git clone <https://github.com/kishosiva/playwright-related-products.git>
-- cd ebay-automation-framework 
-- Install Java 17+ 
-- java -version 
-- Install Maven 
-- mvn -v 
-- Install Playwright Browsers 
-- mvn clean install 
-- mvn playwright:install 
-- Open project in IntelliJ IDEA
-- mvn clean test
+1. Clone the repository:
+   git clone https://github.com/kishosiva/playwright-related-products.git
+   
+3. Navigate to project folder:
+   cd surge_global_assessment
+
+4. Install dependencies:
+   mvn clean install
+
+## Run Tests
+
+Run using Maven: mvn clean test
+OR
+Run testng.xml file
 
 ## Reporting
 - Reports are generated in report/TestReport.html.
