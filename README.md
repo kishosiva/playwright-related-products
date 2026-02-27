@@ -95,7 +95,7 @@ API fallback handling
 
 ## Prerequisites
 
-- Java 21 installed
+- Java 17 installed
 - Maven installed
 - IntelliJ IDEA 
 - Git installed
